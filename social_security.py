@@ -21,13 +21,16 @@
 # Import modules
 from datetime import datetime
 from math import floor
+import xml.etree.ElementTree as et
+#from lxml import etree
 
 # Earnings history by year.
 # You can find out the information by logging into "my Social Security" at
 # https://www.ssa.gov
 # and navigating to your earnings record at
 # https://secure.ssa.gov/OSSS/er/er001View.do
-#
+# Add 2016 - 2019 earning data from https://www.ssa.gov/oact/cola/AWI.html#Series
+
 EarningsRecord = {
     1998 :      0.0,
     1999 :      0.0,
@@ -51,6 +54,17 @@ EarningsRecord = {
     2017 :      0.0
 }
 
+try:
+    namespaces = {'osss': 'http://ssa.gov/osss/schemas/1.0'}
+    xtree = et.parse("Your_Social_Security_Statement_Data.xml")
+    xroot = xtree.getroot()
+    EarningsRecord.clear()
+
+    for node in xroot.findall('osss:EarningsRecord/osss:Earnings', namespaces):
+        EarningsRecord[int(node.attrib.get("startYear"))] = float( node.find("osss:FicaEarnings", namespaces).text)
+except:
+    print ("XML file was not found!")
+
 # National Average Wage Index (NAWI) data as defined by:
 # https://www.ssa.gov/oact/cola/AWI.html
 #
@@ -67,7 +81,8 @@ NationalAverageWageIndexSeries = {
     1996 : 25913.90,   1997 : 27426.00,   1998 : 28861.44,   1999 : 30469.84,   2000 : 32154.82,
     2001 : 32921.92,   2002 : 33252.09,   2003 : 34064.95,   2004 : 35648.55,   2005 : 36952.94,
     2006 : 38651.41,   2007 : 40405.48,   2008 : 41334.97,   2009 : 40711.61,   2010 : 41673.83,
-    2011 : 42979.61,   2012 : 44321.67,   2013 : 44888.16,   2014 : 46481.52,   2015 : 48098.63
+    2011 : 42979.61,   2012 : 44321.67,   2013 : 44888.16,   2014 : 46481.52,   2015 : 48098.63,
+    2016 : 48642.15,   2017 : 50321.89,   2018 : 52145.80,   2019 : 54099.99
 }
 
 # The first year with Social Security Earnings
@@ -168,4 +183,5 @@ print ("Normal Monthly Benefit ____________________", "{:11.2f}".format(NormalMo
 print ("Normal Annual Benefit _____________________", "{:11.2f}".format(NormalMonthlyBenefit * 12.0))
 print ("Reduced (70%) Monthly Benefit _____________", "{:11.2f}".format(ReducedMonthlyBenefit))
 print ("Reduced (70%) Annual Benefit ______________", "{:11.2f}".format(ReducedMonthlyBenefit * 12.0))
+
 
