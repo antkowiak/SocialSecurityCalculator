@@ -20,4 +20,5 @@ Python script to calculate estimated Social Security Benefits
  Written by Ryan Antkowiak (antkowiak@gmail.com) 2017-07-15
  Copyright (c) 2017 All Rights Reserved
 
+ Updated by Kevin Fowlks (fowlk1kd@gmail.com) 2019-09-03
 
