@@ -160,12 +160,12 @@ ReducedMonthlyBenefit = 0.7 * NormalMonthlyBenefit
 ReducedMonthlyBenefit = (floor(ReducedMonthlyBenefit * 10.0)) / 10.0
 
 # Print the results
-print "Top 35 Years of Adjusted Earnings _________", "{:11.2f}".format(Top35YearsEarnings)
-print "Average Indexed Monthly Earnings (AIME) ___", "{:11.2f}".format(AIME)
-print "First Bend Point __________________________", "{:11.2f}".format(FirstBendPoint)
-print "Second Bend Point _________________________", "{:11.2f}".format(SecondBendPoint)
-print "Normal Monthly Benefit ____________________", "{:11.2f}".format(NormalMonthlyBenefit)
-print "Normal Annual Benefit _____________________", "{:11.2f}".format(NormalMonthlyBenefit * 12.0)
-print "Reduced (70%) Monthly Benefit _____________", "{:11.2f}".format(ReducedMonthlyBenefit)
-print "Reduced (70%) Annual Benefit ______________", "{:11.2f}".format(ReducedMonthlyBenefit * 12.0)
+print ("Top 35 Years of Adjusted Earnings _________", "{:11.2f}".format(Top35YearsEarnings))
+print ("Average Indexed Monthly Earnings (AIME) ___", "{:11.2f}".format(AIME))
+print ("First Bend Point __________________________", "{:11.2f}".format(FirstBendPoint))
+print ("Second Bend Point _________________________", "{:11.2f}".format(SecondBendPoint))
+print ("Normal Monthly Benefit ____________________", "{:11.2f}".format(NormalMonthlyBenefit))
+print ("Normal Annual Benefit _____________________", "{:11.2f}".format(NormalMonthlyBenefit * 12.0))
+print ("Reduced (70%) Monthly Benefit _____________", "{:11.2f}".format(ReducedMonthlyBenefit))
+print ("Reduced (70%) Annual Benefit ______________", "{:11.2f}".format(ReducedMonthlyBenefit * 12.0))
 
