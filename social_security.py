@@ -54,7 +54,7 @@ EarningsRecord = {
 }
 
 try:
-    namespaces = {'osss': 'http://ssa.gov/osss/schemas/1.0'}
+    namespaces = {'osss': 'http://ssa.gov/osss/schemas/2.0'}
     xtree = et.parse("Your_Social_Security_Statement_Data.xml")
     xroot = xtree.getroot()
     EarningsRecord.clear()
@@ -81,7 +81,7 @@ NationalAverageWageIndexSeries = {
     2001 : 32921.92,   2002 : 33252.09,   2003 : 34064.95,   2004 : 35648.55,   2005 : 36952.94,
     2006 : 38651.41,   2007 : 40405.48,   2008 : 41334.97,   2009 : 40711.61,   2010 : 41673.83,
     2011 : 42979.61,   2012 : 44321.67,   2013 : 44888.16,   2014 : 46481.52,   2015 : 48098.63,
-    2016 : 48642.15,   2017 : 50321.89,   2018 : 52145.80,   2019 : 54099.99
+    2016 : 48642.15,   2017 : 50321.89,   2018 : 52145.80,   2019 : 54099.99,   2020 : 55628.60
 }
 
 # The first year with Social Security Earnings
