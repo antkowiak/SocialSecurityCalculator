@@ -1,5 +1,5 @@
-export interface Wages { [key: string]: number; }
-const wageIndex: Wages = require('./wage-index');
+
+import {wageIndex, Wages} from './wage-index';
 
 function calc(earnings: Wages ) {
     const lookbackYears = 35;
@@ -14,8 +14,6 @@ function calc(earnings: Wages ) {
     const wageIndexFactors: Wages = Object.entries(wageIndex).reduce(( acc, [i, val], ) => (
         (acc[i] = 1 + (wageIndex[averageWageLastYear] - val) / val) && acc ) as Wages
     , {} as Wages);
-
-console.log(wageIndexFactors);
 
     const adjustedEarnings: { [key: string]: number; } = Object.entries(earnings).reduce(( acc, [i, val], ) => (
         (acc[i] = val * (wageIndexFactors[i] || futureYearsFactor)) && acc ) as Wages
