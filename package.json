@@ -1,3 +1,28 @@
 {
-    "type": "module"
+  "name": "social-security-calculator",
+  "version": "0.0.2",
+  "description": "Calculate estimated Social Security Benefits",
+  "main": "ssi.js",
+  "files": ["lib/**/*"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcnulty/SocialSecurityCalculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmcnulty/SocialSecurityCalculator/issues"
+  },
+  "homepage": "https://github.com/cmcnulty/SocialSecurityCalculator#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "compound-calc": "^2.0.0"
+  }
 }
