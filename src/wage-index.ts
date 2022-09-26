@@ -120,4 +120,3 @@ const fillBlanks = (vals: Wages) => Object.entries(vals).reduce((acc, [year, P],
 }, {});
 
 // console.log(fillBlanks(longRangeIntermediate));
-console.log(fillBlanks({ 2000: 38915, 2021: 108494}));
