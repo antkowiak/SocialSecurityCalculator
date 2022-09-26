@@ -8,13 +8,14 @@ Python script to calculate estimated Social Security Benefits
  information provided into the EarningsRecord dictionary below.
 
  Inputs:
-           1) EarningsRecord -
-               Dictionary mapping a year to the amount of Social
-               Security eligible earnings in that particular year
+ 
+1) EarningsRecord -
+Dictionary mapping a year to the amount of Social
+Security eligible earnings in that particular year
 
-           2) NationalAverageWageIndexSeries -
-               Data pulled directly from the Social Security website for the
-               national average wage data
+2) NationalAverageWageIndexSeries -
+Data pulled directly from the Social Security website for the
+national average wage data
 
 
  Written by Ryan Antkowiak (antkowiak@gmail.com) 2017-07-15
