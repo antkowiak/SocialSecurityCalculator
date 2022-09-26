@@ -1,9 +1,9 @@
 {
   "name": "social-security-calculator",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "Calculate estimated Social Security Benefits",
-  "main": "ssi.js",
-  "files": ["lib/**/*"],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "compound-calc": "^2.0.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
