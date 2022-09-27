@@ -11,10 +11,13 @@ function calc(earnings: Wages ) {
     const firstBendPoint = Math.round(firstBendPointMultiplier * wageIndex[averageWageLastYear] / bendPointDivisor);
     const secondBendPoint = Math.round(secondBendPointMultiplier * wageIndex[averageWageLastYear] / bendPointDivisor);
 
+    // calculate the wafe index factors
     const wageIndexFactors: Wages = Object.entries(wageIndex).reduce(( acc, [i, val], ) => (
         (acc[i] = 1 + (wageIndex[averageWageLastYear] - val) / val) && acc ) as Wages
     , {} as Wages);
 
+    // adjust the earnings according to the wage index factor,
+    // factor is 1 for any earnings record without a wage-factor
     const adjustedEarnings: Wages = Object.entries(earnings).reduce(( acc, [i, val], ) => (
         (acc[i] = val * (wageIndexFactors[i] || futureYearsFactor)) && acc ) as Wages
     , {} as Wages);
@@ -36,7 +39,7 @@ function calc(earnings: Wages ) {
                 monthlyBenefit = 0.9 * firstBendPoint + 0.32 * (secondBendPoint - firstBendPoint) + 0.15 * (AIME - secondBendPoint);
             }
         }
-        return Math.floor(monthlyBenefit * 10.0) / 10.0;;
+        return Math.floor(monthlyBenefit * 10.0) / 10.0;
     })();
 
     const reducedMonthlyBenefit = Math.floor((( 0.7 * normalMonthlyBenefit) * 10)/10);
