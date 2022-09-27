@@ -15,7 +15,7 @@ function calc(earnings: Wages ) {
         (acc[i] = 1 + (wageIndex[averageWageLastYear] - val) / val) && acc ) as Wages
     , {} as Wages);
 
-    const adjustedEarnings: { [key: string]: number; } = Object.entries(earnings).reduce(( acc, [i, val], ) => (
+    const adjustedEarnings: Wages = Object.entries(earnings).reduce(( acc, [i, val], ) => (
         (acc[i] = val * (wageIndexFactors[i] || futureYearsFactor)) && acc ) as Wages
     , {} as Wages);
 

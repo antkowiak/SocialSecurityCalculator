@@ -12,9 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/cmcnulty/SocialSecurityCalculator.git"
   },
-  "keywords": [],
+  "keywords": ["calculator", "social", "security", "ssi"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cmcnulty/SocialSecurityCalculator/issues"
   },
