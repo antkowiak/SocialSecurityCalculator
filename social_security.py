@@ -14,7 +14,7 @@
 #               national average wage data
 #
 #
-# Written by Ryan Antkowiak (antkowiak@gmail.com) 2017-07-15
+# Written by Ryan Antkowiak 2017-07-15
 # Copyright (c) 2017 All Rights Reserved
 #
 
