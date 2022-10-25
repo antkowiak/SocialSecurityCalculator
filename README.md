@@ -18,7 +18,7 @@ Data pulled directly from the Social Security website for the
 national average wage data
 
 
- Written by Ryan Antkowiak (antkowiak@gmail.com) 2017-07-15
+ Written by Ryan Antkowiak 2017-07-15
  Copyright (c) 2017 All Rights Reserved
 
  Updated by Kevin Fowlks (fowlk1kd@gmail.com) 2019-09-03
