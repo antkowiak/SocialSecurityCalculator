@@ -11,4 +11,4 @@ TypeScript to calculate estimated Social Security Benefits
  Security eligible earnings in that particular year
 
 
-Adapted from python originally written by Ryan Antkowiak (antkowiak@gmail.com)
+Adapted from python originally written by Ryan Antkowiak
