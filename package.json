@@ -26,10 +26,10 @@
   "homepage": "https://github.com/cmcnulty/SocialSecurityCalculator#readme",
   "devDependencies": {
     "@types/xml2js": "^0.4.11",
+    "compound-calc": "^3.0.1",
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "compound-calc": "^2.0.0",
     "xml2js": "^0.4.23"
   },
   "files": [
