@@ -5,8 +5,8 @@ function calc(earnings: Wages ) {
     const lookbackYears = 35;
     const futureYearsFactor = 1;
     const bendPointDivisor = 9779.44;
-    const firstBendPointMultiplier = 180.0;
-    const secondBendPointMultiplier = 1085.0;
+    const firstBendPointMultiplier = 180;
+    const secondBendPointMultiplier = 1085;
     const averageWageLastYear = Math.max(...Object.keys(wageIndex).map( val => parseInt(val)));
     const firstBendPoint = Math.round(firstBendPointMultiplier * wageIndex[averageWageLastYear] / bendPointDivisor);
     const secondBendPoint = Math.round(secondBendPointMultiplier * wageIndex[averageWageLastYear] / bendPointDivisor);
