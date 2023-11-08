@@ -1,5 +1,5 @@
-const compound = require('compound-calc');
-export interface Wages { [key: string]: number; }
+import { compound } from 'compound-calc';
+export type Wages = { [key: string]: number; };
 
 export const wageIndex: Wages = {
     1951: 2799.16,

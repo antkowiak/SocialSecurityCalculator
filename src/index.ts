@@ -1,7 +1,7 @@
 
-import {wageIndex, Wages} from './wage-index';
+import {wageIndex, Wages} from './wage-index.js';
 
-function calc(earnings: Wages ) {
+export const calc = (earnings: Wages) => {
     const lookbackYears = 35;
     const futureYearsFactor = 1;
     const bendPointDivisor = 9779.44;
@@ -57,5 +57,3 @@ function calc(earnings: Wages ) {
     return results;
 
 }
-
-module.exports = calc;

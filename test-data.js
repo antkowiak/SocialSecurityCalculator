@@ -1,4 +1,4 @@
-module.exports = {
+export const earnings = {
     1992: 588,
     1993: 704,
     1994: 1158,

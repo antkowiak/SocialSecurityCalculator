@@ -4,6 +4,7 @@
   "description": "Calculate estimated Social Security Benefits",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -26,11 +27,11 @@
   "homepage": "https://github.com/cmcnulty/SocialSecurityCalculator#readme",
   "devDependencies": {
     "@types/xml2js": "^0.4.11",
-    "compound-calc": "^3.0.1",
+    "compound-calc": "^4.0.3",
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.6.2"
   },
   "files": [
     "lib"

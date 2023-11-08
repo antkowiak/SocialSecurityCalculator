@@ -21,4 +21,4 @@ async function getWages(fileName: string){
     return earnings;
 }
 
-module.exports = getWages;
+export default getWages;
