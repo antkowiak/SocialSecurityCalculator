@@ -15,7 +15,7 @@ async function getWages(fileName: string){
     }
     const results: any[]  = result[`${NS}:OnlineSocialSecurityStatementData`][`${NS}:EarningsRecord`][0][`${NS}:Earnings`];
     const earnings: Wages = results.reduce((acc, earn: any) => (
-        (acc[earn['$'].startYear] = parseInt(earn[`${NS}:FicaEarnings`][0])) && acc ) as Wages
+        acc[earn['$'].startYear] = parseInt(earn[`${NS}:FicaEarnings`][0]), acc ) as Wages
     , {} as Wages);
 
     return earnings;
