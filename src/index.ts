@@ -1,4 +1,3 @@
-
 import {wageIndex, Wages} from './wage-index.js';
 
 export const calc = (earnings: Wages) => {
@@ -55,5 +54,4 @@ export const calc = (earnings: Wages) => {
     }
 
     return results;
-
 }
