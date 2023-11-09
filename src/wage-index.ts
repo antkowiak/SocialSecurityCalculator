@@ -1,6 +1,7 @@
 import { compound } from 'compound-calc';
 export type Wages = { [key: string]: number; };
 
+// https://www.ssa.gov/OACT/COLA/awiseries.html
 export const wageIndex: Wages = {
     1951: 2799.16,
     1952: 2973.32,
@@ -73,10 +74,10 @@ export const wageIndex: Wages = {
     2019: 54099.99,
     2020: 55628.6,
     2021: 60575.07,
+    2022: 63795.13
 };
 
 const shortRangeIntermediate = {
-    2022: 63467.98,
     2023: 66147.17,
     2024: 68627.58,
     2025: 71411.99,
