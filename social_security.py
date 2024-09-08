@@ -129,24 +129,8 @@ AdjustedEarnings = {}
 for i in range(EarningsRecord_FirstYear, EarningsRecord_LastYear + 1) :
     AdjustedEarnings[i] = EarningsRecord[i] * AWI_Factors[i]
 
-# Auxiliary helper function that will return the key of a dictionary that
-# corresponds to the maximum value in the dictionary. This will be used when
-# calculating the top 35 years of earnings history.
-def KeyWithMaxVal(d):
-    v = list(d.values())
-    k = list(d.keys())
-    return k[v.index(max(v))]
-
-# Variable to hold the accumulation of the top 35 years of adjusted annual
-# earnings
-Top35YearsEarnings = 0.0;
-
-# Accumulate the top 35 years of adjusted earnings
-for i in range(0, 35):
-    if AdjustedEarnings:
-        top_year = KeyWithMaxVal(AdjustedEarnings)
-        Top35YearsEarnings += AdjustedEarnings[top_year]
-        del AdjustedEarnings[top_year]
+# Accumulation of the top 35 years of adjusted annual earnings
+Top35YearsEarnings = sum(sorted(AdjustedEarnings.values())[-35:])
 
 # Calculate the Average Indexed Monthly earnings (AIME) by dividing the Top 35
 # years of earnings by the number of months in 35 years (35 * 12 = 420)
