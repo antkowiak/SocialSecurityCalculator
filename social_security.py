@@ -30,28 +30,38 @@ import xml.etree.ElementTree as et
 # https://secure.ssa.gov/OSSS/er/er001View.do
 # Add 2016 - 2019 earning data from https://www.ssa.gov/oact/cola/AWI.html#Series
 
-EarningsRecord = {
-    1998 :      0.0,
-    1999 :      0.0,
-    2000 :      0.0,
-    2001 :      0.0,
-    2002 :      0.0,
-    2003 :      0.0,
-    2004 :      0.0,
-    2005 :      0.0,
-    2006 :      0.0,
-    2007 :      0.0,
-    2008 :      0.0,
-    2009 :      0.0,
-    2010 :      0.0,
-    2011 :      0.0,
-    2012 :      0.0,
-    2013 :      0.0,
-    2014 :      0.0,
-    2015 :      0.0,
-    2016 :      0.0,
-    2017 :      0.0
-}
+try:
+    from mydata import EarningsRecord
+except:
+    EarningsRecord = {
+        1998 :      0.0,
+        1999 :      0.0,
+        2000 :      0.0,
+        2001 :      0.0,
+        2002 :      0.0,
+        2003 :      0.0,
+        2004 :      0.0,
+        2005 :      0.0,
+        2006 :      0.0,
+        2007 :      0.0,
+        2008 :      0.0,
+        2009 :      0.0,
+        2010 :      0.0,
+        2011 :      0.0,
+        2012 :      0.0,
+        2013 :      0.0,
+        2014 :      0.0,
+        2015 :      0.0,
+        2016 :      0.0,
+        2017 :      0.0,
+        2018 :      0.0,
+        2019 :      0.0,
+        2020 :      0.0,
+        2021 :      0.0,
+        2022 :      0.0,
+        2023 :      0.0,
+        2024 :      0.0,
+    }
 
 try:
     namespaces = {'osss': 'http://ssa.gov/osss/schemas/2.0'}
@@ -81,7 +91,8 @@ NationalAverageWageIndexSeries = {
     2001 : 32921.92,   2002 : 33252.09,   2003 : 34064.95,   2004 : 35648.55,   2005 : 36952.94,
     2006 : 38651.41,   2007 : 40405.48,   2008 : 41334.97,   2009 : 40711.61,   2010 : 41673.83,
     2011 : 42979.61,   2012 : 44321.67,   2013 : 44888.16,   2014 : 46481.52,   2015 : 48098.63,
-    2016 : 48642.15,   2017 : 50321.89,   2018 : 52145.80,   2019 : 54099.99,   2020 : 55628.60
+    2016 : 48642.15,   2017 : 50321.89,   2018 : 52145.80,   2019 : 54099.99,   2020 : 55628.60,
+    2021 : 60575.07,   2022 : 63795.13,
 }
 
 # The first year with Social Security Earnings
@@ -121,24 +132,8 @@ AdjustedEarnings = {}
 for i in range(EarningsRecord_FirstYear, EarningsRecord_LastYear + 1) :
     AdjustedEarnings[i] = EarningsRecord[i] * AWI_Factors[i]
 
-# Auxiliary helper function that will return the key of a dictionary that
-# corresponds to the maximum value in the dictionary. This will be used when
-# calculating the top 35 years of earnings history.
-def KeyWithMaxVal(d):
-    v = list(d.values())
-    k = list(d.keys())
-    return k[v.index(max(v))]
-
-# Variable to hold the accumulation of the top 35 years of adjusted annual
-# earnings
-Top35YearsEarnings = 0.0;
-
-# Accumulate the top 35 years of adjusted earnings
-for i in range(0, 35):
-    if AdjustedEarnings:
-        top_year = KeyWithMaxVal(AdjustedEarnings)
-        Top35YearsEarnings += AdjustedEarnings[top_year]
-        del AdjustedEarnings[top_year]
+# Accumulation of the top 35 years of adjusted annual earnings
+Top35YearsEarnings = sum(sorted(AdjustedEarnings.values())[-35:])
 
 # Calculate the Average Indexed Monthly earnings (AIME) by dividing the Top 35
 # years of earnings by the number of months in 35 years (35 * 12 = 420)
